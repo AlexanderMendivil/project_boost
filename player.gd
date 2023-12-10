@@ -28,7 +28,7 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body:Node) -> void:
 	if Groups.GOAL in body.get_groups():
-		complete_level()
+		complete_level(body.file_path)
 	elif Groups.LOOSE in body.get_groups():
 		crash_sequence()
 
@@ -37,9 +37,8 @@ func crash_sequence() -> void:
 	await get_tree().create_timer(1.0).timeout
 	get_tree().reload_current_scene()
 
-func complete_level():
-	print("enters here")
-	get_tree().quit()
+func complete_level(next_level_file: String) -> void:
+	get_tree().change_scene_to_file(next_level_file)
 
 class Groups:
 	static var GOAL = "GOAL"

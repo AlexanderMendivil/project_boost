@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3y1vlmatwrov"]
+[gd_scene load_steps=10 format=3 uid="uid://ciloit6tncyn"]
 
-[ext_resource type="PackedScene" uid="uid://bc48g4t11vb6h" path="res://player.tscn" id="1_c6prt"]
-[ext_resource type="Script" path="res://land_pad.gd" id="1_u8lh5"]
+[ext_resource type="Script" path="res://land_pad.gd" id="1_io7lm"]
+[ext_resource type="PackedScene" uid="uid://bc48g4t11vb6h" path="res://player.tscn" id="2_dhsmg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nb65g"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -18,6 +18,9 @@ glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_al6an"]
 albedo_color = Color(0.380392, 0.254902, 0.184314, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jqbhs"]
+albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ugjyi"]
 albedo_color = Color(0.701961, 0.286275, 0.286275, 1)
@@ -40,6 +43,12 @@ use_collision = true
 size = Vector3(35, 8, 5)
 material = SubResource("StandardMaterial3D_al6an")
 
+[node name="floor2" type="CSGBox3D" parent="." groups=["LOOSE"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, -0.01)
+use_collision = true
+size = Vector3(10, 8, 5)
+material = SubResource("StandardMaterial3D_jqbhs")
+
 [node name="launch_pad" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0.2, 0)
 use_collision = true
@@ -51,11 +60,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 0)
 use_collision = true
 size = Vector3(1, 0.4, 1)
 material = SubResource("StandardMaterial3D_jimte")
-script = ExtResource("1_u8lh5")
-file_path = "res://level_2.tscn"
+script = ExtResource("1_io7lm")
+file_path = "res://level_3.tscn"
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.978148, 0.207912, 0, -0.207912, 0.978148, 0, 3, 11)
 
-[node name="player" parent="." instance=ExtResource("1_c6prt")]
+[node name="player" parent="." instance=ExtResource("2_dhsmg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1.5, 0)
