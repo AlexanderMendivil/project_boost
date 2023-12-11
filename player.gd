@@ -5,7 +5,8 @@ extends RigidBody3D
 
 ## How much torque apply when pressing the left, right keys.
 @export_range(0.0, 100.0) var torque: float = 100.0
-# Called when the node enters the scene tree for the first time.
+
+var is_transitioning: bool = false
 var timer: float = 0.0
 var increase: int = 0
 
@@ -27,18 +28,27 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body:Node) -> void:
-	if Groups.GOAL in body.get_groups():
-		complete_level(body.file_path)
-	elif Groups.LOOSE in body.get_groups():
-		crash_sequence()
+
+	if is_transitioning == false:
+		if Groups.GOAL in body.get_groups():
+			complete_level(body.file_path)
+		elif Groups.LOOSE in body.get_groups():
+			crash_sequence()
 
 
 func crash_sequence() -> void:
-	await get_tree().create_timer(1.0).timeout
-	get_tree().reload_current_scene()
-
+	is_transitioning = true
+	var tween = create_tween()
+	set_process(false)
+	tween.tween_interval(1)
+	tween.tween_callback(get_tree().reload_current_scene)
+	
 func complete_level(next_level_file: String) -> void:
-	get_tree().change_scene_to_file(next_level_file)
+	is_transitioning = true
+	set_process(false)
+	var tween = create_tween()
+	tween.tween_interval(1)
+	tween.tween_callback(get_tree().change_scene_to_file.bind(next_level_file))
 
 class Groups:
 	static var GOAL = "GOAL"
