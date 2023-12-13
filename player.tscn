@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bc48g4t11vb6h"]
+[gd_scene load_steps=8 format=3 uid="uid://bc48g4t11vb6h"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_ovivj"]
-[ext_resource type="AudioStream" uid="uid://vo1eetss0f8j" path="res://SFX - Death Explosion.ogg" id="2_pulrj"]
-[ext_resource type="AudioStream" uid="uid://bou18riqfvbb8" path="res://SFX - Success.ogg" id="3_1pmba"]
+[ext_resource type="AudioStream" uid="uid://vo1eetss0f8j" path="res://audio/SFX - Death Explosion.ogg" id="2_ruhq1"]
+[ext_resource type="AudioStream" uid="uid://bou18riqfvbb8" path="res://audio/SFX - Success.ogg" id="3_kxkol"]
+[ext_resource type="AudioStream" uid="uid://dmsbrl518nxtt" path="res://audio/SFX - Main engine thrust.ogg" id="4_xm0fo"]
+[ext_resource type="PackedScene" uid="uid://ux6ivcx1ovdp" path="res://booster_particles.tscn" id="5_iwlje"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_4xoi7"]
 
@@ -25,10 +27,22 @@ mesh = SubResource("CylinderMesh_4xoi7")
 shape = SubResource("CylinderShape3D_hdh6c")
 
 [node name="ExplosionAudio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_pulrj")
+stream = ExtResource("2_ruhq1")
 
 [node name="SuccessAudio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_1pmba")
+stream = ExtResource("3_kxkol")
+
+[node name="RocketAudio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_xm0fo")
+
+[node name="BoosterParticles" parent="." instance=ExtResource("5_iwlje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.07192, 0)
+
+[node name="RightBoosterParticles" parent="." instance=ExtResource("5_iwlje")]
+transform = Transform3D(0.485863, -0.874035, 0, 0.874035, 0.485863, 0, 0, 0, 1, 0.450814, -1.07192, 0)
+
+[node name="LeftBoosterParticles" parent="." instance=ExtResource("5_iwlje")]
+transform = Transform3D(0.44868, 0.893693, 0, -0.893693, 0.44868, 0, 0, 0, 1, -0.422993, -1.07192, 0)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
