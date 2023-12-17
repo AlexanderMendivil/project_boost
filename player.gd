@@ -16,7 +16,8 @@ var increase: int = 0
 @onready var booster_particles: GPUParticles3D = $BoosterParticles
 @onready var right_booster_particles: GPUParticles3D = $RightBoosterParticles
 @onready var left_booster_particles: GPUParticles3D = $LeftBoosterParticles
-
+@onready var explosion_particles: GPUParticles3D = $ExplosionParticles
+@onready var success_particles: GPUParticles3D = $SuccessParticles
 func _ready() -> void:
 	pass
 
@@ -55,7 +56,8 @@ func _on_body_entered(body:Node) -> void:
 
 func crash_sequence() -> void:
 
-	explosion_audio.play()	
+	explosion_audio.play()
+	explosion_particles.emitting = true	
 	is_transitioning = true
 	var tween = create_tween()
 	set_process(false)
@@ -65,6 +67,7 @@ func crash_sequence() -> void:
 func complete_level(next_level_file: String) -> void:
 	success_audio.play()  
 	is_transitioning = true
+	success_particles.emitting = true
 	set_process(false)
 	var tween = create_tween()
 	tween.tween_interval(success_audio.stream.get_length() + 0.2)
@@ -78,3 +81,7 @@ func _on_effects_playing() -> void:
 class Groups:
 	static var GOAL = "GOAL"
 	static var LOOSE = "LOOSE"
+
+
+func _on_body_exited(body: Node) -> void:
+	pass # Replace with function body.
