@@ -1,0 +1,112 @@
+[gd_scene load_steps=2 format=3 uid="uid://rxo8sn5tf8mk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_al6an"]
+albedo_color = Color(0.380392, 0.254902, 0.184314, 1)
+
+[node name="floor" type="CSGBox3D" groups=["LOOSE"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+use_collision = true
+size = Vector3(35, 8, 5)
+material = SubResource("StandardMaterial3D_al6an")
+
+[node name="Wall" type="CSGBox3D" parent="."]
+transform = Transform3D(0.905243, -0.424895, 0, 0.424895, 0.905243, 0, 0, 0, 1, -17.5967, 5.16049, -0.270945)
+material_override = SubResource("StandardMaterial3D_al6an")
+size = Vector3(4, 10, 4)
+material = SubResource("StandardMaterial3D_al6an")
+
+[node name="Wall2" type="CSGBox3D" parent="."]
+transform = Transform3D(0.972435, 0.233174, 0, -0.233174, 0.972435, 0, 0, 0, 1, -16.6109, 6.684, -0.0589342)
+material_override = SubResource("StandardMaterial3D_al6an")
+size = Vector3(4, 10, 4)
+material = SubResource("StandardMaterial3D_al6an")
+
+[node name="Wall3" type="CSGBox3D" parent="."]
+transform = Transform3D(0.994858, -0.101282, 0, 0.101282, 0.994858, 0, 0, 0, 1, -17.8762, 10.0805, -0.0511045)
+material_override = SubResource("StandardMaterial3D_al6an")
+size = Vector3(4, 10, 4)
+material = SubResource("StandardMaterial3D_al6an")
+
+[node name="Wall4" type="CSGBox3D" parent="."]
+transform = Transform3D(0.388432, 0.921477, 0, -0.921477, 0.388432, 0, 0, 0, 1, -14.719, 13.8677, -0.0511045)
+material_override = SubResource("StandardMaterial3D_al6an")
+size = Vector3(4, 10, 4)
+material = SubResource("StandardMaterial3D_al6an")
+
+[node name="Wall5" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.208031, 0.978122, 0, -0.978122, -0.208031, 0, 0, 0, 1, -8.4216, 16.1491, -0.0511045)
+material_override = SubResource("StandardMaterial3D_al6an")
+size = Vector3(4, 10, 4)
+material = SubResource("StandardMaterial3D_al6an")
+
+[node name="Wall6" type="CSGBox3D" parent="."]
+transform = Transform3D(0.227671, 0.973738, 0, -0.973738, 0.227671, 0, 0, 0, 1, -1.04953, 16.6205, -0.0511045)
+material_override = SubResource("StandardMaterial3D_al6an")
+size = Vector3(4, 10, 4)
+material = SubResource("StandardMaterial3D_al6an")
+
+[node name="Wall7" type="CSGBox3D" parent="."]
+transform = Transform3D(0.725879, 0.687823, 0, -0.687823, 0.725879, 0, 0, 0, 1, 18.6484, 5.07827, -0.0511045)
+material_override = SubResource("StandardMaterial3D_al6an")
+size = Vector3(4, 10, 4)
+material = SubResource("StandardMaterial3D_al6an")
+
+[node name="Wall8" type="CSGBox3D" parent="."]
+transform = Transform3D(0.999431, -0.0337307, 0, 0.0337307, 0.999431, 0, 0, 0, 1, 18.6484, 9.25671, -0.0511045)
+material_override = SubResource("StandardMaterial3D_al6an")
+size = Vector3(4, 10, 4)
+material = SubResource("StandardMaterial3D_al6an")
+
+[node name="Wall9" type="CSGBox3D" parent="."]
+transform = Transform3D(0.744405, -0.667729, 0, 0.667729, 0.744405, 0, 0, 0, 1, 18.8463, 7.93721, -0.0511045)
+material_override = SubResource("StandardMaterial3D_al6an")
+size = Vector3(4, 10, 4)
+material = SubResource("StandardMaterial3D_al6an")
+
+[node name="Wall10" type="CSGBox3D" parent="."]
+transform = Transform3D(0.928252, 0.371951, 0, -0.371951, 0.928252, 0, 0, 0, 1, 19.814, 13.1493, -0.0511045)
+material_override = SubResource("StandardMaterial3D_al6an")
+size = Vector3(4, 10, 4)
+material = SubResource("StandardMaterial3D_al6an")
+
+[node name="Wall11" type="CSGBox3D" parent="."]
+transform = Transform3D(0.198427, -0.980116, 0, 0.980116, 0.198427, 0, 0, 0, 1, 17.4829, 16.2721, -0.0511045)
+material_override = SubResource("StandardMaterial3D_al6an")
+size = Vector3(4, 10, 4)
+material = SubResource("StandardMaterial3D_al6an")
+
+[node name="Wall12" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.563843, -0.825882, 0, 0.825882, -0.563843, 0, 0, 0, 1, 12.2488, 16.2721, -0.0511045)
+material_override = SubResource("StandardMaterial3D_al6an")
+size = Vector3(4, 10, 4)
+material = SubResource("StandardMaterial3D_al6an")
+
+[node name="Wall13" type="CSGBox3D" parent="."]
+transform = Transform3D(0.121072, -0.992644, 0, 0.992644, 0.121072, 0, 0, 0, 1, 6.33302, 16.7658, -0.0511045)
+material_override = SubResource("StandardMaterial3D_al6an")
+size = Vector3(4, 10, 4)
+material = SubResource("StandardMaterial3D_al6an")
+
+[node name="Wall14" type="CSGBox3D" parent="."]
+transform = Transform3D(0.71145, -0.702737, 0, 0.702737, 0.71145, 0, 0, 0, 1, 6.33302, 5.93498, -6.95376)
+material_override = SubResource("StandardMaterial3D_al6an")
+size = Vector3(4, 10, 8.95682)
+material = SubResource("StandardMaterial3D_al6an")
+
+[node name="Wall15" type="CSGBox3D" parent="."]
+transform = Transform3D(0.941547, -0.336882, 0, 0.336882, 0.941547, 0, 0, 0, 1, -11.1094, 7.39683, -6.95376)
+material_override = SubResource("StandardMaterial3D_al6an")
+size = Vector3(4, 10, 8.95682)
+material = SubResource("StandardMaterial3D_al6an")
+
+[node name="Wall16" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.729399, -0.684089, 0, 0.684089, -0.729399, 0, 0, 0, 1, -4.9681, 7.12286, -6.95376)
+material_override = SubResource("StandardMaterial3D_al6an")
+size = Vector3(4, 10, 8.95682)
+material = SubResource("StandardMaterial3D_al6an")
+
+[node name="Wall17" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.996255, 0.0864603, 0, -0.0864603, -0.996255, 0, 0, 0, 1, 0.915529, 6.5455, -6.95376)
+material_override = SubResource("StandardMaterial3D_al6an")
+size = Vector3(4, 10, 8.95682)
+material = SubResource("StandardMaterial3D_al6an")

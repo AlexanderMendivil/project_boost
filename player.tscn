@@ -94,7 +94,7 @@ material_override = ExtResource("9_j1qlu")
 mesh = SubResource("CylinderMesh_8pkxi")
 
 [node name="MiddleEngine3" type="MeshInstance3D" parent="Body"]
-transform = Transform3D(0.68442, -0.729088, 0, 0.729088, 0.68442, 0, 0, 0, 1, 0.197204, -0.668989, 0)
+transform = Transform3D(0.68442, -0.729088, 0, 0.729088, 0.68442, 0, 0, 0, 1, 0.196635, -0.662913, -0.00219941)
 material_override = ExtResource("9_j1qlu")
 mesh = SubResource("CylinderMesh_0oo54")
 
