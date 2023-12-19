@@ -42,6 +42,8 @@ func _process(delta: float) -> void:
 		apply_torque(Vector3(0.0, 0.0, -torque) * delta)
 	else:
 		left_booster_particles.emitting = false
+	if(Input.is_action_pressed('ui_cancel')):
+		get_tree().quit()
 	
 
 

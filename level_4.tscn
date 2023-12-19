@@ -13,8 +13,10 @@ ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 sky_material = SubResource("ProceduralSkyMaterial_nb65g")
 
 [sub_resource type="Environment" id="Environment_8bwt6"]
-background_mode = 2
+background_mode = 1
+background_color = Color(0.0509804, 0.0313726, 0.0235294, 1)
 sky = SubResource("Sky_60whc")
+ambient_light_source = 3
 tonemap_mode = 2
 glow_enabled = true
 
@@ -37,10 +39,6 @@ albedo_color = Color(0.223529, 0.223529, 0.619608, 1)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_8bwt6")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
-shadow_enabled = true
 
 [node name="floor2" type="CSGBox3D" parent="." groups=["LOOSE"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -2, -0.01)
@@ -86,3 +84,8 @@ destination = Vector3(0, 2, 0)
 duration = 3.0
 
 [node name="floor5" parent="." instance=ExtResource("4_h3e86")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="floor5"]
+transform = Transform3D(0.907429, -0.178701, 0.380313, -0.360327, 0.13472, 0.923046, -0.216185, -0.974637, 0.057858, -0.14327, 6.47799, -62.3402)
+light_energy = 0.5
+shadow_enabled = true

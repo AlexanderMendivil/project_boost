@@ -5,8 +5,8 @@
 [ext_resource type="AudioStream" uid="uid://bou18riqfvbb8" path="res://audio/SFX - Success.ogg" id="3_kxkol"]
 [ext_resource type="AudioStream" uid="uid://dmsbrl518nxtt" path="res://audio/SFX - Main engine thrust.ogg" id="4_xm0fo"]
 [ext_resource type="PackedScene" uid="uid://ux6ivcx1ovdp" path="res://particles/booster_particles.tscn" id="5_iwlje"]
-[ext_resource type="PackedScene" path="res://particles/explosion_particles.tscn" id="6_t2khr"]
-[ext_resource type="PackedScene" path="res://particles/success_particles.tscn" id="7_5y1nb"]
+[ext_resource type="PackedScene" uid="uid://dcecb8hw7dbrv" path="res://particles/explosion_particles.tscn" id="6_t2khr"]
+[ext_resource type="PackedScene" uid="uid://jfwajmrh6ca7" path="res://particles/success_particles.tscn" id="7_5y1nb"]
 [ext_resource type="Material" uid="uid://cjbcns5e66vmp" path="res://ShipRedMaterial.tres" id="8_5s4my"]
 [ext_resource type="Material" uid="uid://bogd7a2gegkmp" path="res://EngineColor.tres" id="9_j1qlu"]
 
